@@ -8,12 +8,18 @@ if (args.length > 0){
 
 	var maxWidth = 0
 	lines.foreach(line => maxWidth = maxWidth.max(widthOfLength(line)))
-
-	for (line <- lines){
-		val numSpaces = maxWidth - widthOfLength(line)
-		val padding = " " * numSpaces
-		println(padding + line.length + " | " + line)
+	
+	def formatLines(lines: List[String]) :  List[String] =  {
+		var liste = List[String]()
+		for (line <- lines){
+			val numSpaces = maxWidth - widthOfLength(line)
+			val padding = " " * numSpaces
+			liste = padding + line.length + " | " + line :: liste 
+		}
+		return liste.reverse;
 	}
+
+	formatLines(lines).foreach(println)
 }else
 	Console.err.println("Please enter a filename");
 
