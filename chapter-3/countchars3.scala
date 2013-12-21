@@ -10,13 +10,10 @@ if (args.length > 0){
 	lines.foreach(line => maxWidth = maxWidth.max(widthOfLength(line)))
 	
 	def formatLines(lines: List[String]) :  List[String] =  {
-		var liste = List[String]()
-		for (line <- lines){
-			val numSpaces = maxWidth - widthOfLength(line)
-			val padding = " " * numSpaces
-			liste = padding + line.length + " | " + line :: liste 
-		}
-		return liste.reverse;
+		val liste = lines.map(line => 
+			" " * (maxWidth - widthOfLength(line)) + line.length + " | " + line 
+		)   
+	liste //same as return liste;
 	}
 
 	formatLines(lines).foreach(println)
