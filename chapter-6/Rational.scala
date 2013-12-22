@@ -3,16 +3,16 @@
 
 class Rational(n: Int, d: Int){ //primary constructor
 	require(d != 0)
-	private val g = gcd(n.abs, d.abs)
-	val numer: Int = n / g
-	val denom: Int = d / g
+		private val g = gcd(n.abs, d.abs)
+		val numer: Int = n / g
+		val denom: Int = d / g
 
-	def this(n: Int) = this(n, 1) // auxilliary constructor, aux.constructors må kalle andre constructorer.
-	override def toString = numer + "/" + denom
+		def this(n: Int) = this(n, 1) // auxilliary constructor, aux.constructors må kalle andre constructorer.
+		override def toString = numer + "/" + denom
 
-	def + (that: Rational): Rational = { // a + b is same as a.+(b)
-		new Rational(numer * that.denom + that.numer * denom, denom * that.denom)
-	}
+		def + (that: Rational): Rational = { // a + b is same as a.+(b)
+			new Rational(numer * that.denom + that.numer * denom, denom * that.denom)
+		}
 
 	def + (i: Int): Rational = {
 		new Rational(numer + i * denom, denom)
@@ -20,9 +20,9 @@ class Rational(n: Int, d: Int){ //primary constructor
 
 	def - (that: Rational):Rational  = {
 		new Rational(
-			numer * that.denom - that.numer * denom,
-			denom * that.denom
-			)
+				numer * that.denom - that.numer * denom,
+				denom * that.denom
+			    )
 	}
 
 	def - (i: Int): Rational = {
