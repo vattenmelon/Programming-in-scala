@@ -1,3 +1,3 @@
 Programming-in-scala
 ====================
-Examples from book
+Examples and other stuff from book "Programming in Scala"
