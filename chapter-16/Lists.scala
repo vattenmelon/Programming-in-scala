@@ -27,4 +27,4 @@ println(fruits mkString ("|",",","|"))
 
 val arr = fruits.toArray
 println(arr)
-
+println(fruits.iterator.next)
