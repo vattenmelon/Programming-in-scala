@@ -24,3 +24,7 @@ println(e)
 println(fruits.toString)
 println(fruits mkString ",")
 println(fruits mkString ("|",",","|"))
+
+val arr = fruits.toArray
+println(arr)
+
