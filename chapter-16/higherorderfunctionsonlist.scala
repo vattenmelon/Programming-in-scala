@@ -22,3 +22,10 @@ println(fruits filter (_.length == 5 ))
 println(fruits partition (_.length == 5))
 
 println(fruits find (_.length == 5 ))
+
+println(fruits dropWhile (_ startsWith "or"))
+println(fruits takeWhile (_ startsWith "or"))
+
+println(fruits forall (_.length == 10))
+println(fruits forall (_.length < 10))
+
